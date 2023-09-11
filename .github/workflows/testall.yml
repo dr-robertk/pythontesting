@@ -3,10 +3,18 @@
 
 name: Testing
 
-# when:on every push to the repository all tests are run  
+# when:
 on:
+  # on every push to main all tests are run  
   push:
     branches: [ "main" ]
+
+  # schedule test for nightly build, every day at 22 h
+  # check Linux crontab to understand time format    
+  #schedule:
+  #  - cron: "22 0 * * *"    
+
+  # test when a PR for main branch was opened
   pull_request:
     branches: [ "main" ]
 
