@@ -3,12 +3,14 @@
 
 name: Testing
 
+# when:on every push to the repository all tests are run  
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
+# what: setup a Python environment and run pytest
 jobs:
   build:
 
