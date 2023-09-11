@@ -1,4 +1,8 @@
 import pytest
+import numpy as np
+
+# this will fail unless in requirements.txt
+import scipy
 
 # content of test_sample.py (from pytest docu)
 def func(x):
