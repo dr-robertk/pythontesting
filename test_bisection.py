@@ -21,10 +21,10 @@ def root_param(a, b, maxit):
     return root
 
 # use parameterize decorators to test different parameter sets
-@pytest.mark.parametrize("test_input, expected", [((-1.2, 1, 100), 0),
-                                                  ((-1.2, 1, 10),  0),
-                                                  ((-2, -1, 100), np.inf)])
-def test_func(test_input, expected):
-    root = root_param(*test_input)
-    assert abs(root - expected) < 1e-8
+@pytest.mark.parametrize("inpt, exptd", [((-1.2, 1, 100), 0),
+                                          ((-1.2, 1, 10),  0),
+                                          ((-2, -1, 100), np.inf)])
+def test(inpt, exptd):
+    root = root_param(*inpt)
+    assert abs(root - exptd) < 1e-8
 
